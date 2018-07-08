@@ -5,5 +5,11 @@ else
     using Test
 end
 
-# write your own tests here
-@test 1 == 2
+@testset "CayleyConfiguration" begin
+    A1 = [0 1 0; 0 0 1]
+    A2 = [1 0; 0 1]
+
+    CC = CayleyConfiguration(A1, A2)
+    @test CC.A == [0 1 0 1 0; 0 0 1 0 1; 1 1 1 0 0; 0 0 0 1 1]
+    @test CC.offsets == [1, 4]
+end

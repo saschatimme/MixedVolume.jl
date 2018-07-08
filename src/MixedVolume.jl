@@ -1,5 +1,6 @@
+__precompile__()
+
 module MixedVolume
 
-# package code goes here
-
+    include("cayley.jl")
 end # module
